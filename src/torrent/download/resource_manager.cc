@@ -303,10 +303,7 @@ ResourceManager::receive_download_unchoke(int num) {
 
 int
 ResourceManager::retrieve_upload_can_unchoke() {
-  if (m_maxUploadUnchoked == 0)
-    return std::numeric_limits<int>::max();
-
-  return (int)m_maxUploadUnchoked - (int)m_currentlyUploadUnchoked;
+  return -1;
 }
 
 int

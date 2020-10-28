@@ -498,7 +498,7 @@ Download::set_uploads_max(uint32_t v) {
     throw input_error("Max uploads must be between 0 and 2^16."); 
 	 	 
   // For the moment, treat 0 as unlimited. 
-  m_ptr->main()->up_group_entry()->set_max_slots(v == 0 ? DownloadInfo::unlimited : v); 
+  m_ptr->main()->up_group_entry()->set_max_slots(v);
   m_ptr->main()->choke_group()->up_queue()->balance_entry(m_ptr->main()->up_group_entry());
 }
 
